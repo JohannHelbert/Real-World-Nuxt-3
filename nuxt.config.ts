@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   routeRules: {
-    '**': { prerender: true }
+    '/': { ssr: true },
+    '/categories': { prerender: true },
+    '/categories/*': { swr: 300 },
+    '/posts/*': { swr: 60 }
   }
 })
